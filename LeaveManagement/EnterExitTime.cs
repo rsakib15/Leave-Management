@@ -89,7 +89,7 @@ namespace Leave
                 }
 
                 String[] endtoken = end.Split(':');
-                String[] starttoken = start.Split('-');
+                String[] starttoken = start.Split(':');
 
                 int second;
                 int min;
@@ -98,13 +98,16 @@ namespace Leave
                 if (Convert.ToInt32(endtoken[2]) >= Convert.ToInt32(starttoken[2]))
                 {
                     second = Convert.ToInt32(endtoken[2]) - Convert.ToInt32(starttoken[2]);
+                    
                 }
+                
                 else
                 {
                     endtoken[2] = ((Convert.ToInt32(endtoken[2])) + 60).ToString();
                     endtoken[1] = ((Convert.ToInt32(endtoken[1])) - 1).ToString();
                     second = Convert.ToInt32(endtoken[2]) - Convert.ToInt32(starttoken[2]);
                 }
+
 
                 if (Convert.ToInt32(endtoken[1]) >= Convert.ToInt32(starttoken[1]))
                 {
@@ -117,17 +120,16 @@ namespace Leave
                     min = Convert.ToInt32(endtoken[1]) - Convert.ToInt32(starttoken[1]);
                 }
 
+
                 hour = Convert.ToInt32(endtoken[0]) - Convert.ToInt32(starttoken[0]);
-
-
-                MessageBox.Show(hour.ToString()+ " " + min.ToString() +" "+ second.ToString());
 
                 int total = hour * 3600 + min * 60 + second;
 
-      
-                return total;
-                CN.thisConnection.Close();
+ 
                 
+                CN.thisConnection.Close();
+                return total;
+
             }
             catch (Exception ex)
             {
@@ -146,10 +148,26 @@ namespace Leave
             sv.thisConnection.Open();
             OracleCommand thisCommand = sv.thisConnection.CreateCommand();
 
+            thisCommand.Connection = sv.thisConnection;
+
+            thisCommand.CommandText =
+                "update dailywork set ENDTIME = '" + DateTime.Now.ToString("HH:mm:ss") + "' where employeeid= '" + metroTextBox1.Text + "'";
+
+            try
+            {
+                thisCommand.ExecuteNonQuery();
+                MessageBox.Show("Exit Time Included");
+                this.Hide();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
             int len = lengthCount();
 
             thisCommand.CommandText =
-                "update dailywork set ENDTIME = '" + DateTime.Now.ToString("HH:mm:ss") + "', LENGTH = '" + len + "' where employeeid= '" + metroTextBox1.Text + "'";
+                "update dailywork set LENGTH = '" + len.ToString() + "' where employeeid= '" + metroTextBox1.Text + "'";
 
             thisCommand.Connection = sv.thisConnection;
             thisCommand.CommandType = CommandType.Text;

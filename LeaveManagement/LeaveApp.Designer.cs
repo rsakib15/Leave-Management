@@ -34,7 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -47,13 +47,11 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
-            this.metroComboBox3 = new MetroFramework.Controls.MetroComboBox();
             this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
             this.metroTextBox8 = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
             this.metroTextBox5 = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
             this.metroTextBox4 = new MetroFramework.Controls.MetroTextBox();
@@ -90,6 +88,8 @@
             this.TotalDays = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.metroTabControl2 = new MetroFramework.Controls.MetroTabControl();
             this.metroPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -112,7 +112,7 @@
             this.metroPanel1.HorizontalScrollbarSize = 10;
             this.metroPanel1.Location = new System.Drawing.Point(18, 91);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(364, 478);
+            this.metroPanel1.Size = new System.Drawing.Size(380, 478);
             this.metroPanel1.TabIndex = 0;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
@@ -121,7 +121,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkOliveGreen;
-            this.panel1.Controls.Add(this.label16);
+            this.panel1.Controls.Add(this.label17);
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.label13);
@@ -133,26 +133,26 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, 165);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(364, 333);
+            this.panel1.Size = new System.Drawing.Size(380, 313);
             this.panel1.TabIndex = 3;
             // 
-            // label16
+            // label17
             // 
-            this.label16.AutoSize = true;
-            this.label16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label16.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(240, 154);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(80, 27);
-            this.label16.TabIndex = 10;
-            this.label16.Text = "Name :";
+            this.label17.AutoSize = true;
+            this.label17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label17.Font = new System.Drawing.Font("Algerian", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(25, 146);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(68, 34);
+            this.label17.TabIndex = 11;
+            this.label17.Text = "999";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label15.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(142, 118);
+            this.label15.Location = new System.Drawing.Point(142, 78);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(80, 27);
             this.label15.TabIndex = 9;
@@ -163,7 +163,7 @@
             this.label14.AutoSize = true;
             this.label14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label14.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(142, 85);
+            this.label14.Location = new System.Drawing.Point(111, 51);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(80, 27);
             this.label14.TabIndex = 8;
@@ -174,7 +174,7 @@
             this.label13.AutoSize = true;
             this.label13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label13.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(142, 49);
+            this.label13.Location = new System.Drawing.Point(111, 24);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(57, 27);
             this.label13.TabIndex = 7;
@@ -184,10 +184,10 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(122, 228);
+            this.label6.Font = new System.Drawing.Font("Algerian", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(25, 242);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(85, 48);
+            this.label6.Size = new System.Drawing.Size(68, 34);
             this.label6.TabIndex = 6;
             this.label6.Text = "999";
             // 
@@ -196,7 +196,7 @@
             this.label5.AutoSize = true;
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(25, 185);
+            this.label5.Location = new System.Drawing.Point(25, 205);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(318, 27);
             this.label5.TabIndex = 5;
@@ -207,7 +207,7 @@
             this.label4.AutoSize = true;
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(25, 154);
+            this.label4.Location = new System.Drawing.Point(25, 111);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(221, 27);
             this.label4.TabIndex = 4;
@@ -218,7 +218,7 @@
             this.label3.AutoSize = true;
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(25, 118);
+            this.label3.Location = new System.Drawing.Point(25, 78);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(111, 27);
             this.label3.TabIndex = 3;
@@ -229,7 +229,7 @@
             this.label2.AutoSize = true;
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(25, 85);
+            this.label2.Location = new System.Drawing.Point(25, 51);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 27);
             this.label2.TabIndex = 2;
@@ -240,7 +240,7 @@
             this.label1.AutoSize = true;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(25, 49);
+            this.label1.Location = new System.Drawing.Point(25, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 27);
             this.label1.TabIndex = 0;
@@ -274,13 +274,12 @@
             // metroTabPage1
             // 
             this.metroTabPage1.BackColor = System.Drawing.Color.Transparent;
-            this.metroTabPage1.Controls.Add(this.metroComboBox3);
+            this.metroTabPage1.Controls.Add(this.metroTabControl2);
             this.metroTabPage1.Controls.Add(this.metroComboBox2);
             this.metroTabPage1.Controls.Add(this.metroButton2);
             this.metroTabPage1.Controls.Add(this.metroButton1);
             this.metroTabPage1.Controls.Add(this.metroLabel12);
             this.metroTabPage1.Controls.Add(this.metroTextBox8);
-            this.metroTabPage1.Controls.Add(this.metroLabel11);
             this.metroTabPage1.Controls.Add(this.metroTextBox5);
             this.metroTabPage1.Controls.Add(this.metroLabel10);
             this.metroTabPage1.Controls.Add(this.metroTextBox4);
@@ -312,16 +311,6 @@
             this.metroTabPage1.VerticalScrollbarBarColor = true;
             this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage1.VerticalScrollbarSize = 10;
-            // 
-            // metroComboBox3
-            // 
-            this.metroComboBox3.FormattingEnabled = true;
-            this.metroComboBox3.ItemHeight = 23;
-            this.metroComboBox3.Location = new System.Drawing.Point(465, 255);
-            this.metroComboBox3.Name = "metroComboBox3";
-            this.metroComboBox3.Size = new System.Drawing.Size(226, 29);
-            this.metroComboBox3.TabIndex = 41;
-            this.metroComboBox3.UseSelectable = true;
             // 
             // metroComboBox2
             // 
@@ -391,15 +380,6 @@
             this.metroTextBox8.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.metroTextBox8.Click += new System.EventHandler(this.metroTextBox8_Click);
             // 
-            // metroLabel11
-            // 
-            this.metroLabel11.AutoSize = true;
-            this.metroLabel11.Location = new System.Drawing.Point(377, 258);
-            this.metroLabel11.Name = "metroLabel11";
-            this.metroLabel11.Size = new System.Drawing.Size(36, 19);
-            this.metroLabel11.TabIndex = 34;
-            this.metroLabel11.Text = "Type";
-            // 
             // metroTextBox5
             // 
             // 
@@ -419,6 +399,7 @@
             this.metroTextBox5.MaxLength = 32767;
             this.metroTextBox5.Name = "metroTextBox5";
             this.metroTextBox5.PasswordChar = '\0';
+            this.metroTextBox5.ReadOnly = true;
             this.metroTextBox5.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBox5.SelectedText = "";
             this.metroTextBox5.SelectionLength = 0;
@@ -459,6 +440,7 @@
             this.metroTextBox4.MaxLength = 32767;
             this.metroTextBox4.Name = "metroTextBox4";
             this.metroTextBox4.PasswordChar = '\0';
+            this.metroTextBox4.ReadOnly = true;
             this.metroTextBox4.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBox4.SelectedText = "";
             this.metroTextBox4.SelectionLength = 0;
@@ -499,6 +481,7 @@
             this.metroTextBox3.MaxLength = 32767;
             this.metroTextBox3.Name = "metroTextBox3";
             this.metroTextBox3.PasswordChar = '\0';
+            this.metroTextBox3.ReadOnly = true;
             this.metroTextBox3.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBox3.SelectedText = "";
             this.metroTextBox3.SelectionLength = 0;
@@ -539,6 +522,7 @@
             this.metroTextBox1.MaxLength = 32767;
             this.metroTextBox1.Name = "metroTextBox1";
             this.metroTextBox1.PasswordChar = '\0';
+            this.metroTextBox1.ReadOnly = true;
             this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBox1.SelectedText = "";
             this.metroTextBox1.SelectionLength = 0;
@@ -916,11 +900,34 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.Maroon;
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.linkLabel1.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.LinkColor = System.Drawing.Color.DarkKhaki;
+            this.linkLabel1.Location = new System.Drawing.Point(973, 44);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(100, 28);
+            this.linkLabel1.TabIndex = 5;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Sign Out";
+            // 
+            // metroTabControl2
+            // 
+            this.metroTabControl2.Location = new System.Drawing.Point(29, 97);
+            this.metroTabControl2.Name = "metroTabControl2";
+            this.metroTabControl2.Size = new System.Drawing.Size(660, 356);
+            this.metroTabControl2.TabIndex = 41;
+            this.metroTabControl2.UseSelectable = true;
+            // 
             // LeaveApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1116, 584);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.metroTabControl1);
             this.Controls.Add(this.metroPanel1);
@@ -942,6 +949,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -962,7 +970,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroTextBox metroTextBox6;
         private MetroFramework.Controls.MetroTextBox metroTextBox8;
-        private MetroFramework.Controls.MetroLabel metroLabel11;
         private MetroFramework.Controls.MetroTextBox metroTextBox5;
         private MetroFramework.Controls.MetroLabel metroLabel10;
         private MetroFramework.Controls.MetroTextBox metroTextBox4;
@@ -999,11 +1006,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalDays;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private MetroFramework.Controls.MetroLabel metroLabel13;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
-        private MetroFramework.Controls.MetroComboBox metroComboBox3;
         private MetroFramework.Controls.MetroComboBox metroComboBox2;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private MetroFramework.Controls.MetroTabControl metroTabControl2;
     }
 }
