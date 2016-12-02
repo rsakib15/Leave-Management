@@ -33,3 +33,6 @@ E:\MY_WORKPLACE\C#\LeaveManage\LeaveManagement\obj\Debug\Leave.Form1.resources
 E:\MY_WORKPLACE\C#\LeaveManage\LeaveManagement\obj\Debug\Leave.LeaveApp.resources
 E:\MY_WORKPLACE\C#\LeaveManage\LeaveManagement\obj\Debug\Leave.login.resources
 E:\MY_WORKPLACE\C#\LeaveManage\LeaveManagement\obj\Debug\Leave.Registration.resources
+E:\MY_WORKPLACE\C#\LeaveManage\LeaveManagement\obj\Debug\VirtualJudge.LeaveRequest.resources
+E:\MY_WORKPLACE\C#\LeaveManage\LeaveManagement\obj\Debug\VirtualJudge.Worker.resources
+E:\MY_WORKPLACE\C#\LeaveManage\LeaveManagement\obj\Debug\VirtualJudge.WorkerAttendence.resources
