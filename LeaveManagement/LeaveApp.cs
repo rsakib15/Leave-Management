@@ -14,22 +14,16 @@ namespace Leave
     public partial class LeaveApp : MetroFramework.Forms.MetroForm
     {
         private string sessionID;
+        private string userType;
 
         public LeaveApp(string empid)
         {
             this.sessionID = empid;
-       
             InitializeComponent();
-            UiInitial();
             LoadInfo();
-
             LeaveInitialize();
         }
 
-        private void UiInitial()
-        {
-
-        }
         public void LeaveInitialize()
         {
             try
@@ -80,7 +74,8 @@ namespace Leave
                     label13.Text = thisReader["name"].ToString();
                     label14.Text = thisReader["type"].ToString();
                     label15.Text = thisReader["join"].ToString();
-                    
+                    userType= thisReader["type"].ToString();
+
                 }
 
                 OracleCommand timeCommand = new OracleCommand();
@@ -120,6 +115,34 @@ namespace Leave
                 MessageBox.Show(ex.ToString());
             }
 
+
+
+
+            try
+            {
+                Connection CN = new Connection();
+                CN.thisConnection.Open();
+
+                OracleCommand thisCommand = CN.thisConnection.CreateCommand();
+
+                thisCommand.CommandText = "SELECT * FROM leave WHERE employeeid='" + sessionID + "'";
+
+                OracleDataReader thisReader = thisCommand.ExecuteReader();
+
+
+                while (thisReader.Read())
+                {
+
+                    dataGridView1.Rows.Add(thisReader["leaveid"].ToString(),thisReader["fromdate"].ToString(), thisReader["todate"].ToString(), thisReader["appliedOn"].ToString(), thisReader["admittedby"].ToString(), thisReader["status"].ToString());
+                }
+
+                CN.thisConnection.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
         }
 
         private void metroTabPage4_Click(object sender, EventArgs e)
@@ -155,6 +178,70 @@ namespace Leave
             this.Hide();
             oform.Show();
     
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            Connection sv = new Connection();
+            sv.thisConnection.Open();
+
+            OracleDataAdapter thisAdapter = new OracleDataAdapter("SELECT * FROM Leave", sv.thisConnection);
+            OracleCommandBuilder thisBuilder = new OracleCommandBuilder(thisAdapter);
+
+            DataSet thisDataSet = new DataSet();
+            thisAdapter.Fill(thisDataSet, "data");
+
+            DataRow thisRow = thisDataSet.Tables["data"].NewRow();
+            try
+            {
+
+                OracleCommand seqCommand = new OracleCommand();
+                seqCommand.Connection = sv.thisConnection;
+                seqCommand.CommandText = "select seq_leave.nextval from Leave";
+                OracleDataReader thisReader = seqCommand.ExecuteReader();
+                thisReader = seqCommand.ExecuteReader();
+
+                int nextSeq = 0;
+                if (thisReader.Read())
+                {
+                    nextSeq = Convert.ToInt32(thisReader["NEXTVAL"]);
+                }
+
+
+
+
+                thisRow["LEAVEID"] = nextSeq;
+                thisRow["EMPLOYEEID"] = metroTextBox4.Text;
+                thisRow["FROMDATE"] = metroDateTime1.Text;
+                thisRow["TODATE"] = metroDateTime2.Text;
+                thisRow["LEAVETYPE"] = metroComboBox1.Text;
+                thisRow["PURPOSE"] = metroTextBox8.Text;
+                thisRow["APPLIEDON"] = DateTime.Now.ToString("dd-MM-yyyy");
+                thisRow["ADMITTEDBY"] = metroComboBox2.Text;
+                thisRow["STATUS"] = "Pending";
+
+                thisDataSet.Tables["data"].Rows.Add(thisRow);
+
+                thisAdapter.Update(thisDataSet, "data");
+                MessageBox.Show("Submitted");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            sv.thisConnection.Close();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Form1 oform = new Form1();
+            this.Hide();
+            oform.Show();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
