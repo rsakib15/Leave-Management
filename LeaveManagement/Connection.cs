@@ -10,7 +10,5 @@ namespace Leave
     class Connection
     {
         public OracleConnection thisConnection = new OracleConnection("Data Source=XE;User ID=LeaveManage;Password=123456;");
-   
-    
     }
 }

@@ -84,10 +84,6 @@ namespace Leave
                 {
                     metroTextBox2.Text = thisReader["username"].ToString();
                 }
-                else
-                {
-                    metroTextBox2.Text ="";
-                }
                 CN.thisConnection.Close();
 
             }
@@ -120,10 +116,6 @@ namespace Leave
                 {
 
                     metroTextBox1.Text = thisReader["employeeid"].ToString();
-                }
-                else
-                {
-                    metroTextBox1.Text = "";
                 }
                 CN.thisConnection.Close();
 
