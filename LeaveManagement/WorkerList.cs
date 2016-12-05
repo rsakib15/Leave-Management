@@ -11,35 +11,27 @@ using System.Windows.Forms;
 
 namespace Leave
 {
-  
-    public partial class LeaveRequest : MetroFramework.Forms.MetroForm
+    public partial class WorkerList : MetroFramework.Forms.MetroForm
     {
-
-        public LeaveRequest()
+        public WorkerList()
         {
             InitializeComponent();
-            LoadLeaveLog();
+            LoadWorker();
         }
-        public void LoadLeaveLog()
+
+        public void LoadWorker()
         {
-            
-            try
-            {
-                Connection CN = new Connection();
-                CN.thisConnection.Open();
-                OracleCommand thisCommand = CN.thisConnection.CreateCommand();
-
-                thisCommand.CommandText = "SELECT * FROM leave WHERE status= 'Pending'";
-
+            Connection CN = new Connection();
+            CN.thisConnection.Open();
+            OracleCommand thisCommand = CN.thisConnection.CreateCommand();
+            try {
+                thisCommand.CommandText = "SELECT * FROM users";
                 OracleDataReader thisReader = thisCommand.ExecuteReader();
-
-                dataGridView1.Rows.Clear();
-
+                dataGridView2.Rows.Clear();
 
                 while (thisReader.Read())
                 {
-
-                    dataGridView1.Rows.Add(thisReader["leaveid"].ToString(), thisReader["fromdate"].ToString(), thisReader["todate"].ToString(), thisReader["appliedOn"].ToString(), thisReader["admittedby"].ToString(), thisReader["status"].ToString());
+                    dataGridView2.Rows.Add(thisReader["Name"].ToString(), thisReader["TYPE"].ToString(), thisReader["JOIN"].ToString());
                 }
 
                 CN.thisConnection.Close();
@@ -48,7 +40,7 @@ namespace Leave
             {
                 MessageBox.Show(ex.ToString());
             }
-        }
+}
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {

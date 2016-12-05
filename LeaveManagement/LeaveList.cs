@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Leave
 {
-    public partial class LeaveList : Form
+    public partial class LeaveList : MetroFramework.Forms.MetroForm
     {
         public LeaveList()
         {

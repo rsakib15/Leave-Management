@@ -74,6 +74,7 @@
             this.metroTile1.TabIndex = 7;
             this.metroTile1.Text = "Leave Request";
             this.metroTile1.UseSelectable = true;
+            this.metroTile1.Click += new System.EventHandler(this.metroTile1_Click);
             // 
             // metroTile2
             // 
@@ -104,6 +105,7 @@
             this.metroTile4.TabIndex = 10;
             this.metroTile4.Text = "Worker List";
             this.metroTile4.UseSelectable = true;
+            this.metroTile4.Click += new System.EventHandler(this.metroTile4_Click);
             // 
             // metroPanel1
             // 

@@ -69,6 +69,12 @@
     <Compile Include="AdminPanel.Designer.cs">
       <DependentUpon>AdminPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Approval.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Approval.Designer.cs">
+      <DependentUpon>Approval.cs</DependentUpon>
+    </Compile>
     <Compile Include="Connection.cs" />
     <Compile Include="EnterExitTime.cs">
       <SubType>Form</SubType>
@@ -132,8 +138,17 @@
     <Compile Include="WorkerAttendence.Designer.cs">
       <DependentUpon>WorkerAttendence.cs</DependentUpon>
     </Compile>
+    <Compile Include="WorkerList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkerList.Designer.cs">
+      <DependentUpon>WorkerList.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminPanel.resx">
       <DependentUpon>AdminPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Approval.resx">
+      <DependentUpon>Approval.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EnterExitTime.resx">
       <DependentUpon>EnterExitTime.cs</DependentUpon>
@@ -143,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LeaveApp.resx">
       <DependentUpon>LeaveApp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LeaveList.resx">
+      <DependentUpon>LeaveList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LeaveRequest.resx">
       <DependentUpon>LeaveRequest.cs</DependentUpon>
@@ -167,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WorkerAttendence.resx">
       <DependentUpon>WorkerAttendence.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkerList.resx">
+      <DependentUpon>WorkerList.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

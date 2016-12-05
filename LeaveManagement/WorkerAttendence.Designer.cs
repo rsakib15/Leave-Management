@@ -1,4 +1,4 @@
-﻿namespace VirtualJudge
+﻿namespace Leave
 {
     partial class WorkerAttendence
     {
