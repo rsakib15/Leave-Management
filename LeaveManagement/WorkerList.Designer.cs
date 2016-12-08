@@ -105,7 +105,7 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.dataGridView2);
             this.Name = "WorkerList";
-            this.Text = "WorkerList";
+            this.Text = "       WorkerList";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
