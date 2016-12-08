@@ -17,8 +17,10 @@ namespace Leave
         private string sessionID;
         private string userType;
 
-        public AdminPanel()
+        public AdminPanel(string session)
+
         {
+            this.sessionID = session;
             InitializeComponent();
         }
 
@@ -36,14 +38,14 @@ namespace Leave
 
         private void metroTile1_Click(object sender, EventArgs e)
         {
-            Approval oform = new Approval(sessionID);
+            LeaveRequest oform = new LeaveRequest(sessionID);
             this.Hide();
             oform.Show();
         }
 
         private void metroTile4_Click(object sender, EventArgs e)
         {
-            WorkerList l = new WorkerList();
+            WorkerList l = new WorkerList(sessionID);
             l.Show();
             this.Hide();
         }

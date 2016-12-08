@@ -14,9 +14,11 @@ namespace Leave
   
     public partial class LeaveRequest : MetroFramework.Forms.MetroForm
     {
+        private string session;
 
-        public LeaveRequest()
+        public LeaveRequest(string s)
         {
+            session = s;
             InitializeComponent();
             LoadLeaveLog();
         }
@@ -52,9 +54,23 @@ namespace Leave
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            AdminPanel l = new AdminPanel();
+            AdminPanel l = new AdminPanel(session);
             l.Show();
             this.Hide();
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+            
+            string firstCellValue = dataGridView1[0, dataGridView1.CurrentRow.Index].Value.ToString();
+            string secondCellValue = dataGridView1[0, dataGridView1.CurrentRow.Index].Value.ToString();
+            MessageBox.Show(firstCellValue);
+            MessageBox.Show(secondCellValue);
+            Approval l = new Approval(session,firstCellValue,secondCellValue);
+            l.Show();
+            //this.Hide();
+        }
+
     }
 }

@@ -13,8 +13,10 @@ namespace Leave
 {
     public partial class WorkerList : MetroFramework.Forms.MetroForm
     {
-        public WorkerList()
+        string session;
+        public WorkerList(string s)
         {
+            session = s;
             InitializeComponent();
             LoadWorker();
         }
@@ -44,7 +46,7 @@ namespace Leave
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            AdminPanel l = new AdminPanel();
+            AdminPanel l = new AdminPanel(session);
             l.Show();
             this.Hide();
         }

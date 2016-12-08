@@ -22,6 +22,8 @@ namespace Leave
             InitializeComponent();
             LoadInfo();
             LeaveInitialize();
+            LoadLeaveLog();
+            LoadLeaveHistory();
         }
 
         public void LoadLeaveHistory()
@@ -40,8 +42,6 @@ namespace Leave
 
             try
             {
-
-
                 OracleCommand seqCommand = new OracleCommand();
                 seqCommand.Connection = sv.thisConnection;
                 seqCommand.CommandText = "select seq_leave.nextval from Leave";
@@ -58,7 +58,6 @@ namespace Leave
                 thisRow["EMPLOYEEID"] = metroTextBox4.Text;
                 thisRow["FROMDATE"] = metroDateTime1.Text;
                 thisRow["TODATE"] = metroDateTime2.Text;
-                thisRow["LEAVETYPE"] = metroComboBox1.Text;
                 thisRow["PURPOSE"] = metroTextBox8.Text;
                 thisRow["APPLIEDON"] = DateTime.Now.ToString("dd-MM-yyyy");
                 thisRow["ADMITTEDBY"] = metroComboBox2.Text;
@@ -196,7 +195,6 @@ namespace Leave
                 {
                     int len = Convert.ToInt32(timeReader["LENGTH"])/3600;
                     int min = Convert.ToInt32(timeReader["LENGTH"]) / 60;
-                    MessageBox.Show(len.ToString());
                     label6.Text = len.ToString() + " Hours " + min.ToString() + " Minutes ";
 
                 }
@@ -211,11 +209,9 @@ namespace Leave
                 {
                     int len = Convert.ToInt32(totalReader["SUM(Length)"]) / 3600;
                     int min = Convert.ToInt32(totalReader["SUM(Length)"]) / 60;
-                    MessageBox.Show(len.ToString());
                     label17.Text = len.ToString() + " Hours " + min.ToString() + " Minutes ";
 
                 }
-
 
                 CN.thisConnection.Close();
 

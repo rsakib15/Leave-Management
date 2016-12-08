@@ -16,7 +16,7 @@ namespace Leave
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AdminPanel());
+            Application.Run(new Form1());
         }
     }
 }

@@ -52,7 +52,6 @@ namespace Leave
                     nextSeq = Convert.ToInt32(thisReader["NEXTVAL"]);
                 }
 
-
                 thisRow["EmployeeID"] = nextSeq;
                 thisRow["Username"] = metroTextBox4.Text;
                 thisRow["Type"] = metroComboBox1.Text;
@@ -60,9 +59,7 @@ namespace Leave
                 thisRow["Join"] = DateTime.Now.ToString("dd-MM-yyyy");
                 thisRow["Password"] = metroTextBox1.Text;     
                 thisRow["PIN"] = metroTextBox5.Text;
-
                 thisDataSet.Tables["data"].Rows.Add(thisRow);
-
                 thisAdapter.Update(thisDataSet, "data");
                 MessageBox.Show("Submitted");
             }
@@ -72,7 +69,6 @@ namespace Leave
                 MessageBox.Show(metroComboBox1.Text);
             }
             sv.thisConnection.Close();
-
             Form1 l = new Form1();
             l.Show();
             this.Hide();
