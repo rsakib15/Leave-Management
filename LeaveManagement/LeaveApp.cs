@@ -260,7 +260,8 @@ namespace Leave
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
-        {        
+        {
+            dataGridView2.Rows.Clear();        
             LoadLeaveLog();
             LoadLeaveHistory();
         }
