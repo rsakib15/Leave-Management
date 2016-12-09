@@ -50,7 +50,7 @@ namespace Leave
                 if (timeReader.Read())
                 {
                     int p = Convert.ToInt32(timeReader["LENGTH"].ToString());
-                    MessageBox.Show(p.ToString());
+                    //MessageBox.Show(p.ToString());
                     if (p == 0)
                     {
                         int len = 0;
@@ -90,11 +90,6 @@ namespace Leave
             Form1 l = new Form1();
             l.Show();
             this.Hide();
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void metroTile1_Click(object sender, EventArgs e)

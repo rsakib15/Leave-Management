@@ -24,6 +24,28 @@ namespace Leave
             LeaveInitialize();
             LoadLeaveLog();
             LoadLeaveHistory();
+            AdminLoad();
+
+        }
+
+        private void AdminLoad()
+
+        {
+
+            Connection sv = new Connection();
+            sv.thisConnection.Open();
+
+            OracleCommand seqCommand = new OracleCommand();
+            seqCommand.Connection = sv.thisConnection;
+            seqCommand.CommandText = "SELECT * FROM users where type='Admin'";
+            OracleDataReader thisReader = seqCommand.ExecuteReader();
+            thisReader = seqCommand.ExecuteReader();
+            while (thisReader.Read())
+            {
+                metroComboBox2.Items.Add(thisReader[1].ToString());
+            }
+            sv.thisConnection.Close();
+
         }
 
         public void InsertNewRequest()

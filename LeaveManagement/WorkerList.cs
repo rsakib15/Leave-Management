@@ -27,7 +27,7 @@ namespace Leave
             CN.thisConnection.Open();
             OracleCommand thisCommand = CN.thisConnection.CreateCommand();
             try {
-                thisCommand.CommandText = "SELECT * FROM users";
+                thisCommand.CommandText = "SELECT * FROM users where type != 'Admin'";
                 OracleDataReader thisReader = thisCommand.ExecuteReader();
                 dataGridView2.Rows.Clear();
 
