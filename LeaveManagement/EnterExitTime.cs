@@ -16,14 +16,16 @@ namespace Leave
         public EnterExitTime()
         {
             InitializeComponent();
-            Load();
+            VLoad();
+            metroTextBox6.PasswordChar = '*';
         }
 
-        public void Load()
+        public void VLoad()
         {
             metroButton1.Visible = false;
             metroButton2.Visible = false;
         }
+
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             Form1 oform = new Form1();
