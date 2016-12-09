@@ -16,6 +16,7 @@ namespace Leave
         public login()
         {
             InitializeComponent();
+            metroTextBox3.PasswordChar = '*';
         }
 
         private void logincheck()
@@ -34,7 +35,7 @@ namespace Leave
                 if (thisReader.Read())
                 {
                     string type = thisReader["TYPE"].ToString();
-                    if (type == "General")
+                    if (type == "Generel")
                     {
                         LeaveApp oform = new LeaveApp(thisReader["employeeid"].ToString());
                         this.Hide();

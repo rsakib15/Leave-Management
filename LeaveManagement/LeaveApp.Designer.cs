@@ -372,7 +372,6 @@
             this.metroTextBox8.UseSelectable = true;
             this.metroTextBox8.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox8.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.metroTextBox8.Click += new System.EventHandler(this.metroTextBox8_Click);
             // 
             // metroTextBox5
             // 
@@ -698,7 +697,6 @@
             this.metroTabPage4.VerticalScrollbarBarColor = true;
             this.metroTabPage4.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage4.VerticalScrollbarSize = 10;
-            this.metroTabPage4.Click += new System.EventHandler(this.metroTabPage4_Click);
             // 
             // dataGridView1
             // 

@@ -41,7 +41,6 @@ namespace Leave
                     metroTextBox3.Text = thisReader["FROMDATE"].ToString();
                     metroTextBox4.Text = thisReader["TODATE"].ToString();
                     textBox1.Text = thisReader["PURPOSE"].ToString();
-                    
                 }
 
                 CN.thisConnection.Close();
@@ -59,7 +58,7 @@ namespace Leave
             OracleCommand thisCommand = sv.thisConnection.CreateCommand();
 
             thisCommand.CommandText =
-                "update leave set STATUS = 'Approved'where leaveid= '" + leave1 + "'";
+                "update leave set STATUS = 'Approved' where leaveid= '" + leave1 + "'";
 
             thisCommand.Connection = sv.thisConnection;
             thisCommand.CommandType = CommandType.Text;
