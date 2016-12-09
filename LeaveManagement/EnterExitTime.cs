@@ -51,7 +51,7 @@ namespace Leave
                 thisRow["DATETIME"] = DateTime.Now.ToString("dd-MM-yyyy");
                 thisRow["EMPLOYEEID"] = metroTextBox1.Text;
                 thisRow["STARTTIME"] = DateTime.Now.ToString("HH:mm:ss");
-
+                thisRow["LENGTH"] = '0' ;
                 thisDataSet.Tables["data"].Rows.Add(thisRow);
 
                 thisAdapter.Update(thisDataSet, "data");

@@ -161,9 +161,22 @@ namespace Leave
                 OracleDataReader timeReader = timeCommand.ExecuteReader();
                 if (timeReader.Read())
                 {
-                    int len = Convert.ToInt32(timeReader["LENGTH"])/3600;
-                    int min = Convert.ToInt32(timeReader["LENGTH"]) / 60;
-                    label6.Text = len.ToString() + " Hours " + min.ToString() + " Minutes ";
+                    int p = Convert.ToInt32(timeReader["LENGTH"].ToString());
+                    MessageBox.Show(p.ToString());
+                    if (p==0)
+                    {
+                        int len = 0;
+                        int min = 0;
+                        label6.Text = len.ToString() + " Hours " + min.ToString() + " Minutes ";
+                    }
+                    else
+                    {
+                        int len = Convert.ToInt32(timeReader["LENGTH"]) / 3600;
+                        int min = Convert.ToInt32(timeReader["LENGTH"]) / 60;
+                        label6.Text = len.ToString() + " Hours " + min.ToString() + " Minutes ";
+                    }
+                    
+                    
                 }
                 OracleCommand totalCommand = new OracleCommand();
                 totalCommand.Connection = CN.thisConnection;
@@ -171,6 +184,7 @@ namespace Leave
                 OracleDataReader totalReader = totalCommand.ExecuteReader();
                 if (totalReader.Read())
                 {
+            
                     int len = Convert.ToInt32(totalReader["SUM(Length)"]) / 3600;
                     int min = Convert.ToInt32(totalReader["SUM(Length)"]) / 60;
                     label17.Text = len.ToString() + " Hours " + min.ToString() + " Minutes ";
